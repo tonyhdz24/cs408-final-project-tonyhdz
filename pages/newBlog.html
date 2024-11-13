@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Simple Semantic HTML Website</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>New Blog</h1>
+    </header>
+    <nav class="button-container button-container_NewBlog">
+      <button type="button" class="btn-home">
+        <a href="../index.html">Home</a>
+      </button>
+    </nav>
+    <main>
+      <section id="main-content">
+        <form action="">
+          <input
+            type="text"
+            name="blog-title"
+            id="blog-title"
+            placeholder="Title"
+          />
+          <input
+            type="text"
+            name="blog-author"
+            id="blog-author"
+            placeholder="Author"
+          />
+          <input
+            type="text"
+            name="blog-tag"
+            id="blog-tag"
+            placeholder="Tag (Optional)"
+          />
+
+          <textarea name="blog-text" id="blog-text"></textarea>
+          <button type="submit">Add</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 CS408 Final Project</p>
+      <p id="contact">Antonio Hernandez</p>
+    </footer>
+  </body>
+</html>
