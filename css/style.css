@@ -1,4 +1,131 @@
-h1{
-  border-color: #d3e644;
-  border-style: dashed;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  /* New Styles */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+header,
+nav,
+section,
+article,
+aside,
+footer {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+header {
+  margin-top: 10px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+nav {
+  background-color: #eee;
+  position: relative;
+}
+footer {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+section {
+  text-align: center;
+}
+section p {
+  text-align: justify;
+}
+/* General Button styles */
+button {
+  font-family: inherit;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.btn-home {
+  background-color: #7ab2d3;
+}
+button a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.filter_btn {
+  background-color: #88c273;
+}
+nav {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.button-container_NewBlog {
+  justify-content: start;
+}
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form textarea {
+  height: 150px; /* Sets the height */
+  padding: 10px; /* Adds space inside the textarea */
+  border: 1px solid #ccc; /* Defines the border */
+  border-radius: 5px; /* Rounds the corners */
+  font-family: Arial, sans-serif; /* Sets the font */
+  font-size: 14px; /* Sets the font size */
+  color: #333; /* Sets the text color */
+  /* background-color: #f9f9f9; Sets the background color */
+  resize: none; /* Enables resizing in both directions */
+  /* overflow: scroll; */
+}
+
+/* Filter Dropdown */
+.filter-dropdown {
+  width: 400px;
+  height: 300px;
+  background-color: #f4f4f4;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  border-radius: 5px;
+  padding: 15px 15px;
+}
+.hidden {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.filter_form {
+  height: 100%;
+}
+.filter_form_input {
+  display: flex;
+  justify-content: end;
+}
+.filter_form_input input {
+  margin-left: 20px;
+  width: 250px;
+}
+.filter_btn {
+  margin-top: auto;
+  width: 100%;
 }
