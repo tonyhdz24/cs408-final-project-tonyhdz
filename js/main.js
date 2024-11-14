@@ -1,18 +1,35 @@
-window.onload = loaded;
+//* Selecting DOM Elements
+const btnFilter = document.getElementById("btn-filter");
+const dropDownContainer = document.querySelector(".filter-dropdown");
 
-/**
- * Simple Function that will be run when the browser is finished loading.
- */
-function loaded() {
-    // Assign to a variable so we can set a breakpoint in the debugger!
-    const hello = sayHello();
-    console.log(hello);
+function showFilterDropdown() {
+  dropDownContainer.classList.add("visible");
+}
+function hideFilterDropdown() {
+  dropDownContainer.classList.remove("visible");
 }
 
-/**
- * This function returns the string 'hello'
- * @return {string} the string hello
- */
-export function sayHello() {
-    return 'hello';
-}
+//* Event Listeners
+
+// Shows Dropdown
+btnFilter.onclick = () => {
+  showFilterDropdown();
+};
+// Hides Dropdown
+document.onclick = (e) => {
+  var elementClicked = e.target;
+  // Check if the clicked element is not the dropdown container or a child of it
+  if (
+    elementClicked !== btnFilter &&
+    !dropDownContainer.contains(elementClicked)
+  ) {
+    hideFilterDropdown();
+  }
+};
+
+document.onkeydown = (e) => {
+  var keyPressed = e.key;
+  if (keyPressed == "Escape") {
+    hideFilterDropdown();
+  }
+};

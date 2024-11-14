@@ -61,6 +61,9 @@ button {
 .btn-home {
   background-color: #7ab2d3;
 }
+.btn-add {
+  background-color: #9edf9c;
+}
 button a {
   font-size: 20px;
   text-decoration: none;
@@ -99,6 +102,7 @@ form textarea {
 }
 
 /* Filter Dropdown */
+/* Default Hidden */
 .filter-dropdown {
   width: 400px;
   height: 300px;
@@ -107,13 +111,19 @@ form textarea {
   top: 0;
   right: 10px;
   border-radius: 5px;
-  padding: 15px 15px;
+  padding: 15px;
+  opacity: 0; /* Start hidden */
+  transform: translateY(-10px); /* Initial position for animation */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease; /* Smooth animation */
+  pointer-events: none; /* Prevents interaction when hidden */
 }
-.hidden {
-  display: none;
-  width: 0;
-  height: 0;
+/* Visible state */
+.filter-dropdown.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Slide to original position */
+  pointer-events: auto; /* Allows interaction when visible */
 }
+
 .filter_form {
   height: 100%;
 }
