@@ -73,32 +73,16 @@ button a {
 .filter_btn {
   background-color: #88c273;
 }
+.blog-sample_link,
+.btn-view-all {
+  background-color: #fcf596;
+}
+
 nav {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
-.button-container_NewBlog {
-  justify-content: start;
-}
-/* Form Styles */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-form textarea {
-  height: 150px; /* Sets the height */
-  padding: 10px; /* Adds space inside the textarea */
-  border: 1px solid #ccc; /* Defines the border */
-  border-radius: 5px; /* Rounds the corners */
-  font-family: Arial, sans-serif; /* Sets the font */
-  font-size: 14px; /* Sets the font size */
-  color: #333; /* Sets the text color */
-  /* background-color: #f9f9f9; Sets the background color */
-  resize: none; /* Enables resizing in both directions */
-  /* overflow: scroll; */
 }
 
 /* Filter Dropdown */
@@ -138,4 +122,42 @@ form textarea {
 .filter_btn {
   margin-top: auto;
   width: 100%;
+}
+/* New Blog Page Styles */
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form textarea {
+  height: 400px; /* Sets the height */
+  padding: 10px; /* Adds space inside the textarea */
+  border: 1px solid #ccc; /* Defines the border */
+  border-radius: 5px; /* Rounds the corners */
+  font-family: Arial, sans-serif; /* Sets the font */
+  font-size: 14px; /* Sets the font size */
+  color: #333; /* Sets the text color */
+  /* background-color: #f9f9f9; Sets the background color */
+  resize: none; /* Enables resizing in both directions */
+  /* overflow: scroll; */
+}
+.new-blog-input {
+  font-family: inherit;
+  padding: 10px 10px;
+  font-size: 15px;
+}
+.blog-text {
+  font-size: 15px;
+}
+.new-blog-input:focus {
+  border: 2px solid #4caf50; /* Change the border color */
+  outline: none; /* Remove the default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add a shadow for better visibility */
+}
+
+textarea:focus,
+select:focus {
+  border: 2px solid #4caf50;
+  outline: none;
 }

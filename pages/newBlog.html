@@ -13,9 +13,12 @@
       <h1>New Blog</h1>
     </header>
     <nav class="button-container button-container_NewBlog">
-      <button type="button" class="btn-home">
-        <a href="../index.html">Home</a>
-      </button>
+      <a href="../index.html">
+        <button type="button" class="btn-home">Home</button>
+        <a href="./allBlogs.html">
+          <button type="button" class="btn-view-all">View All Blogs</button>
+        </a>
+      </a>
     </nav>
     <main>
       <section id="main-content">
@@ -23,18 +26,21 @@
           <input
             type="text"
             name="blog-title"
+            class="new-blog-input"
             id="blog-title"
             placeholder="Title"
           />
           <input
             type="text"
             name="blog-author"
+            class="new-blog-input"
             id="blog-author"
             placeholder="Author"
           />
           <input
             type="text"
             name="blog-tag"
+            class="new-blog-input"
             id="blog-tag"
             placeholder="Tag (Optional)"
           />
