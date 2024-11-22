@@ -1,13 +1,19 @@
 //* Selecting DOM Elements
 const btnFilter = document.getElementById("btn-filter");
 const dropDownContainer = document.querySelector(".filter-dropdown");
-// NewBlog page elements
-const addNewBlogBTN = document.getElementById("addNewBlogBTN");
-const blogTitle = document.getElementById("blog-title");
-const blogAuthor = document.getElementById("blog-author");
-const blogTag = document.getElementById("blog-tag");
-const blogText = document.getElementById("blog-text");
 
+// On All Blogs page load, loads all blogs
+document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname;
+  console.log(path);
+  if (path === "/pages/allBlogs.html") {
+    // Action for page1.html
+    console.log("Page 1 loaded :3");
+    // Your specific action for Page 1
+  }
+});
+
+// Enables filter dropdown functionality
 function showFilterDropdown() {
   dropDownContainer.classList.add("visible");
 }
@@ -40,28 +46,3 @@ document.onkeydown = (e) => {
   }
 };
 
-// C.R.U.D Functions :3
-function addNewBlog() {
-  // Getting form inputs
-  console.log("Adding new blog 😽");
-  let xhr = new XMLHttpRequest();
-  xhr.open(
-    "PUT",
-    "https://xzqsynoko9.execute-api.us-east-2.amazonaws.com/blogs"
-  );
-  xhr.setRequestHeader("Content-Type", "application/json");
-  // Send item details from inputs as a JSON string
-  xhr.send(
-    JSON.stringify({
-      id: blogTitle.value,
-      author: blogAuthor.value,
-      tag: blogTag.value,
-      text: blogText.value,
-    })
-  );
-}
-
-// Add a new blog event handler
-addNewBlogBTN.onclick = () => {
-  addNewBlog();
-};
