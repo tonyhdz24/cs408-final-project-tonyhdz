@@ -22,7 +22,7 @@
     </nav>
     <main>
       <section id="main-content">
-        <form action="">
+        <form action="/" id="new-blog-form">
           <input
             type="text"
             name="blog-title"
@@ -46,6 +46,13 @@
             id="blog-tag"
             placeholder="Tag (Optional)"
           />
+          <input
+            type="text"
+            name="blog-id"
+            class="new-blog-input"
+            id="blog-id"
+            placeholder="id (Optional)"
+          />
 
           <textarea name="blog-text" id="blog-text" required></textarea>
           <button type="submit" class="btn-add" id="addNewBlogBTN">Add</button>
@@ -57,5 +64,6 @@
       <p>&copy; 2024 CS408 Final Project</p>
       <p id="contact">Antonio Hernandez</p>
     </footer>
+    <script src="../js/addBlog.js"></script>
   </body>
 </html>
