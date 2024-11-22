@@ -29,6 +29,7 @@
             class="new-blog-input"
             id="blog-title"
             placeholder="Title"
+            required
           />
           <input
             type="text"
@@ -36,6 +37,7 @@
             class="new-blog-input"
             id="blog-author"
             placeholder="Author"
+            required
           />
           <input
             type="text"
@@ -45,8 +47,8 @@
             placeholder="Tag (Optional)"
           />
 
-          <textarea name="blog-text" id="blog-text"></textarea>
-          <button type="submit" class="btn-add">Add</button>
+          <textarea name="blog-text" id="blog-text" required></textarea>
+          <button type="submit" class="btn-add" id="addNewBlogBTN">Add</button>
         </form>
       </section>
     </main>
