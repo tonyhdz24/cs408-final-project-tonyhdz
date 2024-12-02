@@ -70,7 +70,7 @@ button a {
   color: black;
   font-weight: bold;
 }
-.filter_btn {
+#filter_btn {
   background-color: #88c273;
 }
 .blog-sample_link,
@@ -119,7 +119,7 @@ nav {
   margin-left: 20px;
   width: 250px;
 }
-.filter_btn {
+#filter_btn {
   margin-top: auto;
   width: 100%;
 }
@@ -160,4 +160,12 @@ textarea:focus,
 select:focus {
   border: 2px solid #4caf50;
   outline: none;
+}
+.blog-sample_title_details {
+  display: flex;
+  justify-content: space-around;
+}
+.tag {
+  font-weight: 100;
+  font-style: italic;
 }
