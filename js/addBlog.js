@@ -5,7 +5,6 @@ const blogTitle = document.getElementById("blog-title");
 const blogAuthor = document.getElementById("blog-author");
 const blogTag = document.getElementById("blog-tag");
 const blogText = document.getElementById("blog-text");
-const blogId = document.getElementById("blog-id");
 
 // C.R.U.D Functions :3
 function addNewBlog() {
@@ -20,7 +19,6 @@ function addNewBlog() {
   // Send item details from inputs as a JSON string
   xhr.send(
     JSON.stringify({
-      blogId: blogId.value,
       title: blogTitle.value,
       author: blogAuthor.value,
       tag: blogTag.value,
