@@ -24,11 +24,17 @@ function loadSingleBlog(blogId) {
           <h4>by ${blog.author}</h4>
           <p>${blog.text}</p>
           <p><strong>Tag:</strong> ${blog.tag || "No tag"}</p>
-          <button id="btn-${blog.blogId}" class="btn-Delete">
-          <a href="allBlogs.html">Delete</a></button>    
+          <button id="btn-delete" class="btn-Delete">Delete</button>
         `;
 
       document.getElementById("main-content").innerHTML = blogContent;
+
+      // Add event listener to the delete button
+      document
+        .getElementById("btn-delete")
+        .addEventListener("click", function () {
+          deletePost(blogId);
+        });
     } else {
       document.getElementById("main-content").innerHTML =
         "<p>Blog not found.</p>";
@@ -40,13 +46,26 @@ function loadSingleBlog(blogId) {
     `https://xzqsynoko9.execute-api.us-east-2.amazonaws.com/blogs/${blogId}`
   );
   xhr.send();
-  //   Adding eventlistener
-  const btnDelete = document.getElementById(`btn-${blogId}`);
-  btnDelete.onclick = deletePost;
 }
 
 // Delete Post
+function deletePost(blogId) {
+  let xhr = new XMLHttpRequest();
 
-function deletePost() {
-  console.log(`Deleting post ${this}`);
+  xhr.addEventListener("load", function () {
+    if (xhr.status === 200) {
+      console.log(`Post with ID ${blogId} deleted successfully.`);
+      // Redirect to all blogs page after successful deletion
+      window.location.href = "allBlogs.html";
+    } else {
+      console.error(`Failed to delete post with ID ${blogId}.`);
+      alert("Error deleting blog. Please try again.");
+    }
+  });
+
+  xhr.open(
+    "DELETE",
+    `https://xzqsynoko9.execute-api.us-east-2.amazonaws.com/blogs/${blogId}`
+  );
+  xhr.send();
 }
