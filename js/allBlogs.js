@@ -77,15 +77,15 @@ function loadSelectBlogs(author, tag) {
     // Filter Blogs
     let filteredBlogs = new Array();
     blogs.forEach((blog) => {
-      console.log("BLOG => " + blog.author + "Author: " + author);
-      if (blog.author == author || blog.tag == tag) {
-        console.log("BLOG => " + blog.author);
+      if (
+        blog.author.toLowerCase() == author.toLowerCase() ||
+        blog.tag.toLowerCase() == tag.toLowerCase()
+      ) {
         filteredBlogs.push(blog);
       }
     });
 
     filteredBlogs.forEach((blog) => {
-      console.log("FILTEREDBLOG => " + blog.author);
       // Limit the blog text to 100 characters
       const previewText =
         blog.text.length > 450 ? blog.text.slice(0, 450) + "..." : blog.text;

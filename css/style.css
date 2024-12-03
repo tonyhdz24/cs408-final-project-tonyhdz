@@ -169,3 +169,11 @@ select:focus {
   font-weight: 100;
   font-style: italic;
 }
+
+.filter_form_input_text {
+  margin-left: 240px;
+}
+.filter_form_input_text p {
+  padding: 0;
+  margin: 0;
+}
