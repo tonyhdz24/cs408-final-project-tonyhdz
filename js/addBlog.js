@@ -8,7 +8,17 @@ const blogText = document.getElementById("blog-text");
 
 // C.R.U.D Functions :3
 function addNewBlog() {
-  // Getting form inputs
+  // checking form inputs
+  if (
+    !blogTitle.value.trim() ||
+    !blogAuthor.value.trim() ||
+    !blogTag.value.trim() ||
+    !blogText.value.trim()
+  ) {
+    alert("Please fill out all fields before adding a new blog.");
+    return; // Exit the function if validation fails
+  }
+
   console.log("Adding new blog 😽");
   let xhr = new XMLHttpRequest();
   xhr.open(
@@ -25,6 +35,7 @@ function addNewBlog() {
       text: blogText.value,
     })
   );
+  window.location.href = "allBlogs.html";
 }
 
 // Add a new blog event handler
