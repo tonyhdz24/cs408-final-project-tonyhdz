@@ -16,7 +16,6 @@ function loadSingleBlog(blogId) {
 
   xhr.addEventListener("load", function () {
     const blog = JSON.parse(xhr.response); // Parse response JSON to get the blog
-    console.log(blog);
 
     if (blog) {
       const blogContent = `
