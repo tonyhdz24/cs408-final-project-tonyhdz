@@ -1,3 +1,7 @@
+/**
+ * Handles the page load event to retrieve the `blogId` from the URL and load the corresponding blog.
+ * If the `blogId` is found in the URL, it loads the blog details. Otherwise, it displays an error message.
+ */
 window.onload = function () {
   const blogId = new URLSearchParams(window.location.search).get("blogId"); // Get blogId from URL
 
@@ -10,7 +14,13 @@ window.onload = function () {
       "<p>Blog not found.</p>";
   }
 };
-
+/**
+ * Loads a single blog post by its ID from the backend and displays it in the content section.
+ * This function sends a GET request to retrieve the blog post data, and if the blog is found,
+ * it displays the blog's title, author, text, and tag, as well as a delete button.
+ *
+ * @param {string} blogId The ID of the blog post to retrieve.
+ */
 function loadSingleBlog(blogId) {
   let xhr = new XMLHttpRequest();
 
@@ -47,7 +57,13 @@ function loadSingleBlog(blogId) {
   xhr.send();
 }
 
-// Delete Post
+/**
+ * Deletes a blog post by its ID.
+ * This function sends a DELETE request to the backend to delete the blog post. If successful,
+ * the page is redirected to the "allBlogs.html" page.
+ *
+ * @param {string} blogId The ID of the blog post to delete.
+ */
 function deletePost(blogId) {
   let xhr = new XMLHttpRequest();
 

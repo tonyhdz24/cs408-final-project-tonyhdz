@@ -1,5 +1,11 @@
 import { validateInput } from "../js/validateInput.js";
-
+/**
+ * Initializes the blog form and sets up event listeners.
+ *
+ * This function listens for the "DOMContentLoaded" event to ensure the DOM is fully loaded.
+ * It then sets up the "Add New Blog" button click event handler, validates form inputs,
+ * and sends the blog data to the server via an HTTP PUT request.
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const addNewBlogBTN = document.getElementById("addNewBlogBTN");
   const addNewBlogForm = document.getElementById("new-blog-form");
@@ -7,16 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const blogAuthor = document.getElementById("blog-author");
   const blogTag = document.getElementById("blog-tag");
   const blogText = document.getElementById("blog-text");
-
+  /**
+   * Sends a new blog post to the server.
+   *
+   * This function validates the input fields using the `validateInput` function. If validation passes,
+   * it creates a PUT request to send the blog data to the server. Upon success, it redirects the user to
+   * the "allBlogs.html" page. In case of failure, it logs an error message.
+   *
+   * @returns {void} This function does not return any value.
+   */
   function addNewBlog() {
-    if (
-      !validateInput(
-        blogTitle.value,
-        blogAuthor.value,
-        blogTag.value,
-        blogText.value
-      )
-    ) {
+    if (!validateInput(blogTitle.value, blogAuthor.value, blogText.value)) {
       return;
     }
 

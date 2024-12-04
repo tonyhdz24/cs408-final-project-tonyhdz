@@ -1,3 +1,9 @@
+/**
+ * Initializes the blog page by loading all blogs.
+ * This function listens for the `DOMContentLoaded` event to ensure that the DOM is fully loaded
+ * before proceeding with loading the blogs.
+ */
+
 window.onload = loaded();
 const blogsContainer = document.getElementById("main-content");
 const searchBtn = document.getElementById("filter_btn");
@@ -6,20 +12,31 @@ const tagFilter = document.getElementById("filter_tag");
 
 // Handle search button
 searchBtn.onclick = search;
-
+/**
+ * Handles the search functionality to filter blogs by author or tag.
+ * When the search button is clicked, this function retrieves the values from the
+ * filter input fields and loads the filtered blogs.
+ *
+ * @param {Event} e The event object associated with the search button click.
+ */
 function search(e) {
   e.preventDefault();
 
   loadSelectBlogs(authorFilter.value, tagFilter.value);
 }
 
-// Function to load all blogs when the page loads
+/**
+ * Loads all blogs from the database and displays them in the container.
+ * This function makes a GET request to the backend to fetch all blogs,
+ * then it parses the response and creates HTML elements to display them.
+ */
 function loaded() {
   loadAllBlogs();
 }
 
 /**
- * Function to load all blogs from the database and display them in the table
+ * Loads all blogs from the database and displays them in the main content section.
+ * This function sends a GET request to the backend and populates the page with the blog data.
  */
 function loadAllBlogs() {
   console.log("Load All Blogs .....");
@@ -63,7 +80,12 @@ function loadAllBlogs() {
   xhr.send();
 }
 /**
- * Function to load Select blogs from the database and display them in the table
+ * Loads filtered blogs based on the provided author name or tag.
+ * This function sends a GET request to the backend, filters the results based on the
+ * input parameters, and then updates the page to display the filtered blogs.
+ *
+ * @param {string} author The author name to filter blogs by.
+ * @param {string} tag The tag to filter blogs by.
  */
 function loadSelectBlogs(author, tag) {
   console.log("Loading Select Blogs .....");
@@ -124,10 +146,17 @@ function loadSelectBlogs(author, tag) {
 const btnFilter = document.getElementById("btn-filter");
 const dropDownContainer = document.querySelector(".filter-dropdown");
 
-// Enables filter dropdown functionality
+/**
+ * Shows the filter dropdown menu.
+ * This function makes the filter options visible for the user to select.
+ */
 function showFilterDropdown() {
   dropDownContainer.classList.add("visible");
 }
+/**
+ * Hides the filter dropdown menu.
+ * This function hides the filter options when the user clicks outside the dropdown.
+ */
 function hideFilterDropdown() {
   dropDownContainer.classList.remove("visible");
 }
@@ -149,7 +178,7 @@ document.onclick = (e) => {
     hideFilterDropdown();
   }
 };
-
+// Event listener to close the dropdown when pressing the "Escape" key
 document.onkeydown = (e) => {
   var keyPressed = e.key;
   if (keyPressed == "Escape") {
